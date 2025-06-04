@@ -35,7 +35,7 @@ function Goods(props) {
   const deleteData = (g_code) => { //전달받은 g_code값을 가지고  backend로 넘김
     if (window.confirm('정말 삭제하시겠습니까?')) {
       axios //서버에 DELETE 요청 전송
-        .delete(`http://backend:9070/goods/${g_code}`)
+        .delete(`backend/goods/${g_code}`)
         //성공일때 아래 내용 실행
         .then(() => {
           alert('삭제가 완료 되었습니다.');
