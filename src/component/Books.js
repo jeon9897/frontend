@@ -57,7 +57,7 @@ function Books(props) {
   //2. 상품삭제 하기
   const deleteData = (num)=>{
     if(window.confirm('정말 삭제하시겠습니까?')){axios //서버에 del요청 전송하기
-      .delete(`http://localhost:9070/books/${num}`)
+      .delete(`https://port-0-backend-mbiobnhr0088e901.sel4.cloudtype.app/books/${num}`)
       //성공일때 아래 내용 실행
         .then(() => {
           alert('삭제되었습니다.');
