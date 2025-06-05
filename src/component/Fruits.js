@@ -58,7 +58,7 @@ function Fruits(props) {
     const deleteData = (num) => {
       if(window.confirm('정말 삭제하시겠습니까?')){
         axios
-        .delete(`http://localhost:9070/fruits/${num}`)
+        .delete(`https://port-0-backend-mbiobnhr0088e901.sel4.cloudtype.app/fruits/${num}`)
         .then(()=>{
           alert('삭제가 완료 되었습니다.');
           loadData(); //데이터 삭제 후 목록을 다시 갱신해야 한다.
