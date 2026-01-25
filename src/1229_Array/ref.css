@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.success{
+  background:#00ff00;
+}
+.failure{
+  background:orange;
+}
+
+/* .formStyle{} */
+.formStyle fieldset{
+  padding:14px;
+  margin:15px;
+}
+/* .formStyle legend{} */
+.formStyle p{line-height:50px;}
+.formStyle input{
+  border:1px solid #ccc;
+  width:288px;height:40px;
+}
+.formStyle input[type=button]{
+  background:#a12e2e;
+  border:none;color:#ffff;
+  width:140px;
+  margin-right:10px;
+}

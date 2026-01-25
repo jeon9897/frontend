@@ -1,0 +1,15 @@
+[
+{"g_code":"10","g_name":"만두세트","g_cost":"300"},
+{"g_code":"12","g_name":"해물국수세트","g_cost":"880"},
+{"g_code":"15","g_name":"냉동한식세트","g_cost":"750"},
+{"g_code":"22","g_name":"중국식만두","g_cost":"200"},
+{"g_code":"25","g_name":"꼬마만두","g_cost":"250"},
+{"g_code":"36","g_name":"보리빵","g_cost":"350"},
+{"g_code":"57","g_name":"녹차","g_cost":"50"},
+{"g_code":"68","g_name":"우롱차","g_cost":"80"},
+{"g_code":"33","g_name":"아메리카노","g_cost":"1600"},
+{"g_code":"34","g_name":"바닐라라떼","g_cost":"3500"},
+{"g_code":"40","g_name":"왕돈까스","g_cost":"1500"},
+{"g_code":"20","g_name":"자장면","g_cost":"500"},
+{"g_code":"21","g_name":"짬뽕","g_cost":"600"}
+]
