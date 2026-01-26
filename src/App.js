@@ -1,159 +1,124 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
-import Main from './component/Main';
-import Goods from './component/Goods';
-import Create from './component/Create';
-import Update from './component/Update';
-import Books from './component/Books';
-import BooksCreate from './component/BooksCreate';
-import BooksUpdate from './component/BooksUpdate';
-import Fruits from './component/Fruits';
-import FruitsCreate from './component/FruitsCreate';
-import FruitsUpdate from './component/FruitsUpdate';
-import Question from './component/Question';
-import Login from './component/Login';
-import Login2 from './component/Login2';
-import Register from './component/Register';
-import Register2 from './component/Register2';
+
+import './App.css'; //서식
+import Main from './Main'; //메인 콤포넌트
+import Goods from './components/Goods'; //불러올 콤포넌트
+import GoodsCreate from './components/GoodsCreate'; //불러올 콤포넌트
+import GoodsUpdate from './components/GoodsUpdate'; //불러올 콤포넌트
+import Fruits from './components/Fruits';//과일정보 
+import FruitsCreate from './components/FruitsCreate'; //불러올 콤포넌트
+import FruitsUpdate from './components/FruitsUpdate'; //불러올 콤포넌트
+import BookStore from './components/BookStore';//북스토어 
+import BookStoreCreate from './components/BookStoreCreate'; //불러올 콤포넌트
+import BookStoreUpdate from './components/BookStoreUpdate'; //불러올 콤포넌트
+import Noodle from './components/Noodle'; //Noodle
+import NoodleCreate from './components/NoodleCreate'; //NoodleCreate
+import NoodleUpdate from './components/NoodleUpdate'; //NoodleUpdate
+import Question from './components/Question'; //Question
+import Login from './components/Login'; //Login
+import Join from './components/Join'; //Join
 import { AlertProvider, AlertContext } from './AlertContext';
 
 function AppContent() {
-  const { questionCount, goodsCount, booksCount, fruitsCount} = React.useContext(AlertContext);
+  //1. 숫자 알림 카운트
+  const { questionCount, goodsCount, fruitsCount, bookstoreCount} = React.useContext(AlertContext);
+  
+  //2. 숫자 배지 스타일 서식
+  const badgeStyle = {
+    display: 'inline-block',
+    marginLeft: 6,
+    background: 'red',
+    color: 'white',
+    borderRadius: '50%',
+    width: 22,
+    height: 22,
+    fontSize: 14,
+    textAlign: 'center',
+    lineHeight: '22px',
+    fontWeight: 'bold'
+  }
 
   return (
-    <BrowserRouter>
-      <header>
-        <h1>Frontend셋팅 - React + MySQL(메인페이지)</h1>
-        <nav>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li>
-              <Link to='/goods'>
-                Goods{
-                  goodsCount>0 &&(
-                    <span style={{
-                      display:'inline-block',
-                      marginLeft:6,
-                      background:'red',
-                      color:'white',
-                      borderRadius:'50%',
-                      width:'22px',
-                      height:'22px',
-                      fontSize:'14px',
-                      textAlign:'center',
-                      lineHeight:'22px',
-                      fontWeight:'bold'
-                    }}>
-                      {goodsCount}
-                    </span>
-                  )}
-              </Link>
-            </li>
-            <li><Link to='/books'>Books{
-              booksCount>0 &&(
-                    <span style={{
-                      display:'inline-block',
-                      marginLeft:6,
-                      background:'red',
-                      color:'white',
-                      borderRadius:'50%',
-                      width:'22px',
-                      height:'22px',
-                      fontSize:'14px',
-                      textAlign:'center',
-                      lineHeight:'22px',
-                      fontWeight:'bold'
-                    }}>
-                      {booksCount}
-                    </span>
-                  )}
-                </Link></li>
-            <li>
-              <Link to='/fruits'>
-              Fruits
-              {fruitsCount>0 &&(
-                <span style={{
-                  display:'inline-block',
-                  marginLeft:6,
-                  background:'red',
-                  color:'white',
-                  borderRadius:'50%',
-                  width:'22px',
-                  height:'22px',
-                  fontSize:'14px',
-                  textAlign:'center',
-                  lineHeight:'22px',
-                  fontWeight:'bold'
-                }}>
-                  {fruitsCount}
-                </span>
-              )}
-              </Link>
-            </li>
-            <li>
+    <>
+      <BrowserRouter>
+        <header>
+          <h1>Frontend(React) + Backend(MySQL) Setting, DB데이터 입력(C)/수정(U)/출력(R)/삭제(D)</h1>
+          <nav>
+            <ul>
+              <li><Link to="/">Main</Link></li>
+              <li><Link to="/goods">Goods
+                {goodsCount > 0 && (
+                  <span style={badgeStyle}>
+                    {goodsCount}
+                  </span>
+                )}
+              </Link></li>
+              <li><Link to="/fruits">Fruits
+                {fruitsCount > 0 && (
+                  <span style={badgeStyle}>
+                    {fruitsCount}
+                  </span>
+                )}
+              </Link></li>
+              <li><Link to="/bookstore">BookStore
+                {bookstoreCount > 0 && (
+                  <span style={badgeStyle}>
+                    {bookstoreCount}
+                  </span>
+                )}
+              </Link></li>
+              <li><Link to="/noodle">Noodle</Link></li>
               <Link to='/question'>
                 Question
                 {questionCount > 0 && (
-                  <span style={{
-                    display: 'inline-block',
-                    marginLeft: 6,
-                    background: 'red',
-                    color: 'white',
-                    borderRadius: '50%',
-                    width: 22,
-                    height: 22,
-                    fontSize: 14,
-                    textAlign: 'center',
-                    lineHeight: '22px',
-                    fontWeight: 'bold'
-                  }}>
+                  <span style={badgeStyle}>
                     {questionCount}
                   </span>
                 )}
               </Link>
-            </li>
-            <li><Link to='/login'>Login</Link></li>
-            <li><Link to='/login2'>Login2</Link></li>
-          </ul>    
-        </nav>
-      </header>
+              <li><Link to="/login">Login</Link></li>
+            </ul>
+          </nav>
+        </header>
 
-      <main>
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/goods' element={<Goods />} />
-          <Route path='/goods/update/:g_code' element={<Update />} />
-          <Route path='/goods/create' element={<Create />} />
+          <Route path='/goods/goodscreate' element={<GoodsCreate />} />
+          <Route path='/goods/goodsupdate/:g_code' element={<GoodsUpdate />} />
+          <Route path='/fruits/' element={<Fruits />}/>          
+          <Route path='/fruits/fruitscreate/' element={<FruitsCreate />}/>          
+          <Route path='/fruits/fruitsupdate/:num' element={<FruitsUpdate />}/>    
 
-          <Route path='/books' element={<Books />} />
-          <Route path='/books/update/:num' element={<BooksUpdate />} />
-          <Route path='/books/create' element={<BooksCreate />} />
+          <Route path='/bookstore/' element={<BookStore />}/>
+          <Route path='/bookstore/bookstorecreate' element={<BookStoreCreate />}/>
+          <Route path='/bookstore/bookstoreupdate/:code' element={<BookStoreUpdate />}/>
 
-          <Route path='/fruits' element={<Fruits />} />
-          <Route path='/fruits/update/:num' element={<FruitsUpdate />} />
-          <Route path='/fruits/create' element={<FruitsCreate />} />
-          <Route path='/question/' element={<Question />} />
-          <Route path='/login/' element={<Login />} />
-          <Route path='/register/' element={<Register />} />
-          <Route path='/login2/' element={<Login2 />} />
-          <Route path='/register2/' element={<Register2 />} />
+          <Route path='/noodle/' element={<Noodle />}/>
+          <Route path='/noodle/noodlecreate' element={<NoodleCreate />}/>
+          <Route path='/noodle/noodleupdate/:code' element={<NoodleUpdate />}/>
+
+          <Route path='/question' element={<Question />} />
+
+          {/* path주소에 적힌 주소명이 url주소뒤에 붙는 이름, 불러올 콤포넌트 명은 element에 작성 */}
+          <Route path='/login' element={<Login />} />
+          <Route path='/join' element={<Join />} />
         </Routes>
-      </main>
-      
-      <footer>
-        <address>Copyright&copy;2025 Backend&Frontend allrights reserved.</address>
-      </footer>
-    </BrowserRouter>
+
+        <footer>
+          <address>Copyright&copy;2025 React Frontend_Backend + MySQL allrights reserved.</address>
+        </footer>
+      </BrowserRouter>
+    </>
   );
 }
 
-function App() {
-  return (
+function App(){
+  return(
     <AlertProvider>
       <AppContent />
     </AlertProvider>
   );
 }
-
 export default App;
