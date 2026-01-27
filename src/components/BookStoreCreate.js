@@ -35,7 +35,7 @@ function BookStoreCreate(props) {
   //3. '신규상품 등록하기'버튼 클릭시 내용 백엔드로 주소전송하기
   const handleSubmit=(e)=>{
     e.preventDefault(); //새로고침 방지
-    axios.post('http://localhost:9070/bookstore', form)
+    axios.post('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore', form)
     .then(()=>{ //성공시
       alert('상품이 등록 완료되었습니다.');
       // setBookstoreCount(count=>count+1);//숫자증가
@@ -154,5 +154,6 @@ function BookStoreCreate(props) {
     </main>
   );
 }
+
 
 export default BookStoreCreate;
