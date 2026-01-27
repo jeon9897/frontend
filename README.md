@@ -1,3 +1,16 @@
+--------------------------------------------------------
+Goods.js 파일에 아래와 같이 내용 수정해야
+
+//React비동기 통신
+    axios
+    //DB에서 json데이터를 불러온다.
+    .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods')
+    //성공시 데이터를 변수에 저장
+    .then(res=>{
+    
+-------------------------------------------------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
