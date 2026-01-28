@@ -26,7 +26,7 @@ function GoodsCreate(props) {
   //신규상품 등록하기 버튼 클릭시 호출되는 함수 == backend 서버로 전달 
   const handleSubmit=(e)=>{
     e.preventDefault(); //새로고침 막기
-
+    //axios.post('http://localhost:9070/goods', form)
     axios.post('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods', form)
     .then(()=>{ //통신이 성공하면
       alert('상품이 등록 완료 되었습니다.');
@@ -69,5 +69,6 @@ function GoodsCreate(props) {
 
 
 export default GoodsCreate;
+
 
 
