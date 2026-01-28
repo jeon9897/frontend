@@ -23,6 +23,7 @@ function BookStore(props) {
   //2. 데이터 리스트 비동기로 받아서 출력
   const loadData=()=>{
     axios //비동기로
+    //.get('http://localhost:9070/bookstore')
     .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore') //주소로 요청한 json데이터 파일을 가져온다.
     .then(res=>{ //성공시 내용
       setData(res.data); //데이터 저장
@@ -42,6 +43,7 @@ function BookStore(props) {
   const deleteData=(code)=>{
     if(window.confirm('정말로 삭제하시겠습니까?')){
       axios
+        .delete(`http://localhost:9070/bookstore/${code}`)
         .delete( `https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore/${code}`)
         .then(()=>{
           alert('삭제되었습니다.');
@@ -293,4 +295,5 @@ function BookStore(props) {
 
 
 export default BookStore;
+
 
