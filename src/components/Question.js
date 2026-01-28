@@ -60,7 +60,8 @@ function Question(props) {
   const loadData=()=>{
     //비동기 통신 사용
     axios
-    .get('http://localhost:9070/question')
+    //.get('http://localhost:9070/question')
+    .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/question')
     //성공시 데이터를 저장
     .then(res=>{
       setData(res.data);
@@ -164,4 +165,5 @@ function Question(props) {
 
 
 export default Question;
+
 
