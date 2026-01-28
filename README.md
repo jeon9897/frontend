@@ -1,83 +1,49 @@
 --------------------------------------------------------
-Goods.js 파일에 아래와 같이 내용 수정해야
+# frontend, backend(Express_server), DATABASE
+> 클라우드 타입 사이트에 배포하여 GOODS, FRUITS, BOOKSTORE, NOODLE, QUETION, LOGIN페이지 입력(CREATE), 출력(READ), 수정(UPDATE), 삭제(DELETE) 구현하기
 
+## 참고사항
+> Goods.js, GoodsCreate.js, GoodsUpdate.js파일에서 get, put, delete, post주소값을 수정해야 함.
+> AlertContext 수정 - 처음 페이지 로딩시 데이터 개수 로딩하기
+> Goods.js 파일 localhost 주소 수정
+> GoodCreate.js 파일 localhost 주소 수정
+> GoodUpdate.js 파일 localhost 주소 수정
+
+### AlertContext.js
+
+useEffect(()=>{
+    //axios.get('http://localhost:9070/goods')
+    axios.get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods')
+    .then(res=>setGoodsCount(res.data.length));
+    //axios.get('http://localhost:9070/fruits')
+    axios.get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/fruits')
+    .then(res=>setFruitsCount(res.data.length));
+    //axios.get('http://localhost:9070/bookstore')
+    axios.get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore')
+    .then(res=>setBookstoreCount(res.data.length));
+    //axios.get('http://localhost:9070/question')
+    axios.get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/question')
+    .then(res=>setQuestionCount(res.data.length));
+  },[]);
+
+
+### Goods.js 수정할 부분
 //React비동기 통신
     axios
     //DB에서 json데이터를 불러온다.
     .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods')
     //성공시 데이터를 변수에 저장
     .then(res=>{
+
+### 같은 방식으로 GoodsCreate.js, GoodsUpdate.js파일도 수정해야
+
+### url주소 변경 사항(필수)
+> http://localhost:9070/    =>  https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app
+    
     
 -------------------------------------------------------
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
