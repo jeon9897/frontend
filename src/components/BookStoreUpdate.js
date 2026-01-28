@@ -22,7 +22,7 @@ function BookStoreUpdate(props) {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    //axios.get(`http://localhost:9070/bookstore/${code}`)
+    //axios.get(`http://localhost:9070/bookstore/bookstoreupdate/${code}`)
     axios.get(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore/${code}`)
     //성공이면
     .then(res=>{
@@ -183,4 +183,5 @@ function BookStoreUpdate(props) {
 
 
 export default BookStoreUpdate;
+
 
