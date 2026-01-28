@@ -16,6 +16,7 @@ function GoodsUpdate(props) {
 
   //2. 백엔드 서버측으로 넘길 데이터를 통신해서 성공, 실패여부를 출력한다.
   useEffect(()=>{
+    //axios.get(`http://localhost:9070/goods/${g_cost}`)
     axios.get(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods/${g_code}`)
     //성공이면 출력
     .then(res=>{
@@ -45,7 +46,8 @@ function GoodsUpdate(props) {
     e.preventDefault();
 
     //비동기로 업데이트할 내용을 백엔드로 전달해줌
-    axios.put(`http://localhost:9070/goods/goodsupdate/${g_code}`,{
+    //axios.put(`http://localhost:9070/goods/goodsupdate/${g_code}`,{
+    axios.put(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods/goodsupdate/${g_code}`,{;
       g_name:form.g_name, //상품명 저장
       g_cost:form.g_cost //가격정보 저장 
     })
@@ -84,3 +86,4 @@ function GoodsUpdate(props) {
 
 
 export default GoodsUpdate;
+
