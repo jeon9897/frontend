@@ -31,6 +31,7 @@ function FruitsCreate(props) {
   const handleSubmit=(e) =>{
     e.preventDefault(); //새로고침 방지
     //비동기로 backend server에 데이터 넘김
+    //axios.post('http://localhost:9070/goods', form)
     axios.post('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/fruits', form)
     .then(()=>{//통신이 성공적으로 이루어지면
       alert('상품이 정상적으로 등록 완료 되었습니다.');
@@ -99,3 +100,4 @@ function FruitsCreate(props) {
 
 
 export default FruitsCreate;
+
