@@ -48,6 +48,7 @@ function Fruits(props) {
     //React비동기 통신
     axios
     //DB에서 json데이터를 불러온다.
+	//.get('http://localhost:9070/fruits')
     .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/fruits')
     //성공시 데이터를 변수에 저장
     .then(res=>{
@@ -68,6 +69,7 @@ function Fruits(props) {
   const deleteData=(num)=>{
     if(window.confirm('정말 삭제하시겠습니까?')){
       axios
+		//.delete(`http://localhost:9070/fruits/${num}`)
         .delete(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/fruits/${num}`)
         .then(()=>{ //성공시
           alert('삭제되었습니다.');
@@ -325,3 +327,4 @@ function Fruits(props) {
 
 
 export default Fruits;
+
