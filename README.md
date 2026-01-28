@@ -5,11 +5,22 @@
 ---
 
 ## 참고사항
+
+
 > Goods.js, GoodsCreate.js, GoodsUpdate.js파일에서 get, put, delete, post주소값을 수정해야 함.
+
 > AlertContext 수정 - 처음 페이지 로딩시 데이터 개수 로딩하기
+
+ 
 > Goods.js 파일 localhost 주소 수정
+
+
 > GoodCreate.js 파일 localhost 주소 수정
+
+
 > GoodUpdate.js 파일 localhost 주소 수정
+
+
 
 ---
 
