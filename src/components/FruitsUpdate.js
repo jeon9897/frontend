@@ -45,7 +45,8 @@ function FruitsUpdate(props) {
     e.preventDefault(); //새로고침 방지
 
     //비동기방식으로 업데이트할 내용을 백엔드로 전달함
-    axios.put(`http://localhost:9070/fruits/fruitsupdate/${num}`, {
+    //axios.put(`http://localhost:9070/fruits/fruitsupdate/${num}`, {
+    axios.put(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/fruits/fruitsupdate/${num}`,{
       name:form.name, //과일명 저장
       price:form.price, //가격정보 저장
       color:form.color, //색상
@@ -127,5 +128,6 @@ function FruitsUpdate(props) {
 
 
 export default FruitsUpdate;
+
 
 
