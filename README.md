@@ -15,6 +15,8 @@
 
 ### AlertContext.js
 
+
+
 useEffect(()=>{
 
 
@@ -58,6 +60,8 @@ useEffect(()=>{
 
   
 
+  
+
 ---
 
 ### Goods.js 수정할 부분
@@ -85,13 +89,17 @@ useEffect(()=>{
 ---
 ### 같은 방식으로 GoodsCreate.js, GoodsUpdate.js파일도 수정해야
 ---
+
+
 ### url주소 변경 사항(필수)
 > http://localhost:9070/    =>  https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app
     
     
 -------------------------------------------------------
 
+
 ### `npm start`
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
