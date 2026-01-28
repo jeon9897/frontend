@@ -43,8 +43,8 @@ function BookStore(props) {
   const deleteData=(code)=>{
     if(window.confirm('정말로 삭제하시겠습니까?')){
       axios
-        .delete(`http://localhost:9070/bookstore/${code}`)
-        .delete( `https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore/${code}`)
+        //.delete(`http://localhost:9070/bookstore/${code}`)
+        .delete(`https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/bookstore/${code}`)
         .then(()=>{
           alert('삭제되었습니다.');
           loadData(); //삭제후 다시 목록을 갱신한다.
@@ -295,5 +295,6 @@ function BookStore(props) {
 
 
 export default BookStore;
+
 
 
