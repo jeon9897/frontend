@@ -62,11 +62,25 @@ useEffect(()=>{
 
 ### Goods.js 수정할 부분
 //React비동기 통신
+
+
     axios
+
+    
     //DB에서 json데이터를 불러온다.
+
+    
     .get('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/goods')
+
+    
     //성공시 데이터를 변수에 저장
+
+    
     .then(res=>{
+
+
+
+    
 
 ---
 ### 같은 방식으로 GoodsCreate.js, GoodsUpdate.js파일도 수정해야
