@@ -24,25 +24,23 @@ function Login(props) {
   }
 
   //3. 로그인 버튼 클릭시 실행되는 함수
-  const handleSubmit = async e =>{
-    e.preventDefault(); //새로고침 방지
-    //console.log(form.username, form.password)
-
-    try{ //성공시 실행내용
-      //const res = await axios.post('http://localhost:9070/login', form);
-      const res = await axios.post('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/login', form);
-      //사용자 인증이 끝나면 '토근'을 발급한다.
-      localStorage.setItem('token', res.data.token);
-      
-      alert('로그인 성공');
-
-      //해당페이지로 이동하기
-      navigate('/');
-      
-    // 리디렉션 등 필요 시
-    }catch(err){ //실패시 실행내용
-      setError('로그인 실패 : 아이디와 패스워드를 다시 확인하세요.');
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 새로고침 방지
+  
+    axios.post('https://port-0-backend-express-server-mkvweaew5df78f72.sel3.cloudtype.app/login', form)
+      .then((res) => {
+        // 토큰 저장
+        localStorage.setItem('token', res.data.token);
+  
+        alert('로그인 성공');
+  
+        // 페이지 이동
+        navigate('/');
+      })
+      .catch((err) => {
+        console.log(err);
+        setError('로그인 실패 : 아이디와 패스워드를 다시 확인하세요.');
+      });
   };
 
   return (
@@ -126,4 +124,5 @@ function Login(props) {
 
 
 export default Login;
+
 
