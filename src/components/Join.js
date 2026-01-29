@@ -77,7 +77,7 @@ function Join(props) {
             />
           </p>
           <p>
-            <label htmlfor="confirmPassword">패스워드 확인 : </label> 
+            <label htmlFor="confirmPassword">패스워드 확인 : </label> 
             <input type="password"
               id="confirmPasword"
               name="confirmPassword"
@@ -104,3 +104,4 @@ function Join(props) {
 
 
 export default Join;
+
