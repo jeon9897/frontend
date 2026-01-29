@@ -79,7 +79,7 @@ function Join(props) {
           <p>
             <label htmlFor="confirmPassword">패스워드 확인 : </label> 
             <input type="password"
-              id="confirmPasword"
+              id="confirmPassword"
               name="confirmPassword"
               placeholder="비밀번호 확인"
               value={form.confirmPassword}
@@ -104,4 +104,5 @@ function Join(props) {
 
 
 export default Join;
+
 
