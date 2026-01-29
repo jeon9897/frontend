@@ -26,6 +26,16 @@ function Join(props) {
   const handleSubmit = async e =>{
     e.preventDefault(); //새로고침 방지
 
+    if(!form.username.trim()){
+      setError('아이디를 입력하세요.');
+      return;
+    }
+
+    if(form.password.length < 4){
+      setError('비밀번호는 4자 이상 입력하세요.');
+      return;
+    }
+
     //비밀번호1, 비밀번호2가 맞는지 확인
     if(form.password !== form.confirmPassword){
       setError('비밀번호가 맞지 않습니다. 다시 확인하세요.');
@@ -40,14 +50,16 @@ function Join(props) {
       });
 
       setSuccess('회원가입이 완료되었습니다.');
+      
       //전송이 끝나면 모든 값 초기화
       setForm({
         username:'', //이름 초기화
         password:'', //패스워드 초기화
         confirmPassword:'' 
       });
+      
     }catch(err){ //실패시 아래 에러 출력
-      setError('회원가입 실패 : 아이디가 이미 존재하거나 서버 오류입니다.');
+      setError(err.response?.data?.message || '회원가입 실패');
     }
   };
 
@@ -104,6 +116,7 @@ function Join(props) {
 
 
 export default Join;
+
 
 
 
