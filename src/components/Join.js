@@ -59,7 +59,7 @@ function Join(props) {
       });
       
     }catch(err){ //실패시 아래 에러 출력
-      setError(err.response?.data?.message || '회원가입 실패');
+      setError(err.response?.data?.error || '회원가입 실패');
     }
   };
 
@@ -116,6 +116,7 @@ function Join(props) {
 
 
 export default Join;
+
 
 
 
